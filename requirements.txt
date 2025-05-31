@@ -1,0 +1,27 @@
+# PDF Parsing
+pdfminer.six==20221105
+
+# XML Parsing
+lxml==4.9.3
+
+# Geometry and Spatial Operations
+shapely==2.0.1
+
+# RDF and Semantic Web Tools
+rdflib==6.2.0
+
+# Plotting
+matplotlib==3.7.1
+
+# Logging and Fuzzy Matching
+# (difflib is part of standard lib; included here for clarity)
+
+# Other Dependencies
+# tqdm, numpy, matplotlib mentioned in your earlier version but not used in current code
+
+# Optional - Only add if used in other files or future expansion
+# tqdm==4.65.0
+# numpy==1.24.2
+# scikit-learn==1.2.2
+# pyshacl==0.22.1
+# requests==2.28.2

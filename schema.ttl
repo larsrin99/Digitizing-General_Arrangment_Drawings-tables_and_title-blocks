@@ -1,0 +1,123 @@
+@prefix gad: <http://industrialgraph.org/gad-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+########### Classes ###########
+
+gad:Document            a rdfs:Class .
+gad:TitleBlock          a rdfs:Class .
+gad:TabularSection      a rdfs:Class .
+
+gad:RevisionTable       a rdfs:Class .
+gad:DocumentMetadata    a rdfs:Class .
+gad:DocumentProperty    a rdfs:Class .
+
+gad:Table               a rdfs:Class .
+gad:Header              a rdfs:Class .
+gad:Row                 a rdfs:Class .
+gad:Column              a rdfs:Class .
+gad:Cell                a rdfs:Class .
+gad:TextElement         a rdfs:Class .
+
+########### Object Properties (Structural) ###########
+
+# Top-level structure
+gad:hasTitleBlock       a rdf:Property ;
+    rdfs:domain gad:Document ;
+    rdfs:range  gad:TitleBlock .
+
+gad:hasTabularSection   a rdf:Property ;
+    rdfs:domain gad:Document ;
+    rdfs:range  gad:TabularSection .
+
+# Tabular section → Table
+gad:hasTable            a rdf:Property ;
+    rdfs:domain gad:TabularSection ;
+    rdfs:range  gad:Table .
+
+# Table → Header
+gad:hasHeader a rdf:Property ;
+    rdfs:domain gad:Table ;
+    rdfs:range gad:Header .
+
+# Table/RevisionTable → Rows
+gad:hasRow              a rdf:Property ;
+    rdfs:domain gad:Table, gad:RevisionTable ;
+    rdfs:range  gad:Row .
+
+# Row → Columns
+gad:hasColumn           a rdf:Property ;
+    rdfs:domain gad:Row ;
+    rdfs:range  gad:Column .
+
+# Column → Text
+gad:hasText             a rdf:Property ;
+    rdfs:domain gad:Column ;
+    rdfs:range  gad:TextElement .
+
+# Titleblock internals
+gad:hasRevisionTable    a rdf:Property ;
+    rdfs:domain gad:TitleBlock ;
+    rdfs:range  gad:RevisionTable .
+
+gad:hasDocumentMetadata a rdf:Property ;
+    rdfs:domain gad:TitleBlock ;
+    rdfs:range  gad:DocumentMetadata .
+
+gad:hasProperty         a rdf:Property ;
+    rdfs:domain gad:DocumentMetadata ;
+    rdfs:range  gad:DocumentProperty .
+
+# TitleBlock cells with grouped text
+gad:hasCell             a rdf:Property ;
+    rdfs:domain gad:TitleBlock ;
+    rdfs:range  gad:Cell .
+
+gad:cellHasText         a rdf:Property ;
+    rdfs:domain gad:Cell ;
+    rdfs:range gad:TextElement .
+
+########### Data Properties ###########
+
+gad:hasLabel            a rdf:Property ;
+    rdfs:domain gad:DocumentProperty, gad:TextElement ;
+    rdfs:range xsd:string .
+
+gad:hasValue            a rdf:Property ;
+    rdfs:domain gad:DocumentProperty ;
+    rdfs:range xsd:string .
+
+gad:hasBoundingBox      a rdf:Property ;
+    rdfs:domain gad:TextElement, gad:Cell, gad:Table, gad:RevisionTable ;
+    rdfs:range xsd:string .
+
+gad:linkedToRDL         a rdf:Property ;
+    rdfs:domain gad:TextElement ;
+    rdfs:range xsd:anyURI .
+
+gad:pageNumber          a rdf:Property ;
+    rdfs:domain gad:Document ;
+    rdfs:range xsd:integer .
+
+gad:hasId a rdf:Property ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (gad:Row gad:Column gad:DocumentProperty gad:Table)
+    ] ;
+    rdfs:range xsd:string ;
+    rdfs:label "hasId" .
+
+# RDL Annotation Properties
+gad:hasRdlLabel a rdf:Property ;
+    rdfs:domain gad:Column ;
+    rdfs:range  xsd:string .
+
+gad:hasRdlUri a rdf:Property ;
+    rdfs:domain gad:Column ;
+    rdfs:range  xsd:anyURI .
+
+gad:hasHeader a rdf:Property ;
+    rdfs:domain gad:Table ;
+    rdfs:range gad:Header .

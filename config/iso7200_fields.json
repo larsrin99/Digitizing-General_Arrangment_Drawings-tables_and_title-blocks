@@ -1,0 +1,15 @@
+{
+    "project_name": ["project name"],
+    "document_title": ["doc. title", "drawing title", "document title"],
+    "document_number": ["doc. no", "drawing no", "tag number"],
+    "package_number": ["package no", "package no.:", "package number"],
+    "package_title": ["po package title"],
+    "size": ["size"],
+    "scale": ["scale"],
+    "area": ["area"],
+    "system": ["system"],
+    "revision": ["supp. rev.:"],
+    "issue_date": ["date"],
+    "signed": ["sign:"]
+  }
+  
