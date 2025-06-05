@@ -39,6 +39,11 @@ Maps enriched XML content to an RDF graph aligned with ISO 15926 using `rdflib`.
 
 ---
 
+### Ontology
+Ontology is located in schema.ttl and is developed in accordance to ISO 10209 and ISO 15296.
+
+
+---
 ## 🖼️ Implementation Figures
 
 
