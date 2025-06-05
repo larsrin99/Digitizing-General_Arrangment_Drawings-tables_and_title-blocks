@@ -45,12 +45,12 @@ Maps enriched XML content to an RDF graph aligned with ISO 15926 using `rdflib`.
 
 ### 🧱 Layout Extraction Logic
 
-![Layout Modules](LayoutExtraction.drawio (7).png)
+![Layout Modules](gad-extractor/LayoutExtraction.drawio (7).png)
 
 
 ### ⛓️ Semantic Structuring Overview
 
-![Pipeline Overview](SemanticEnrichment.drawio (4).png)
+![Pipeline Overview](gad-extractor/SemanticEnrichment.drawio (4).png)
 
 ---
 
@@ -74,10 +74,7 @@ Maps enriched XML content to an RDF graph aligned with ISO 15926 using `rdflib`.
 
 ## 📂 Example
 
-See the `examples/` directory for:
-- Sample input PDFs
-- Extracted XML files
-- Output RDF graphs (TTL format)
+
 
 ---
 
@@ -85,7 +82,6 @@ See the `examples/` directory for:
 
 Lars Kveberg Ringstad  
 NTNU – Master's Thesis 2025  
-Collaborator: Aker Solutions ASA
 
 ---
 
