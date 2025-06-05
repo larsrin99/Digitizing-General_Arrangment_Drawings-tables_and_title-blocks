@@ -39,9 +39,25 @@ Maps enriched XML content to an RDF graph aligned with ISO 15926 using `rdflib`.
 
 ---
 
-### Ontology
-Ontology is located in schema.ttl and is developed in accordance to ISO 10209 and ISO 15296.
+### 🧠 Ontology
 
+The ontology used in this project is defined in [`schema.ttl`](schema.ttl), and it serves as the semantic backbone for structuring extracted knowledge from General Arrangement Drawings (GADs).
+
+This ontology was developed in alignment with the principles and terminology of:
+
+- **ISO 10209** — *Vocabulary for terms relating to technical product documentation*
+- **ISO 15926** — *Integration of lifecycle data for process plants including oil and gas production facilities*
+- **ISO 15296** — *Industrial automation systems and integration — Generic reference architecture*
+
+The ontology provides a formal vocabulary for key concepts such as:
+
+- **Document structure**: title blocks, tables, rows, columns  
+- **Engineering properties**: tag numbers, revision identifiers, dates, component types  
+- **Spatial and layout relationships**: positions, bounding boxes, and containment
+
+By linking extracted elements (from tables, annotations, and title blocks) to these ontology classes and properties, the pipeline supports machine-readable, standards-aligned knowledge graphs. These can be exported in RDF and queried using SPARQL to enable integration into broader data ecosystems such as digital twins, asset management systems, or data lakes.
+
+> ℹ️ This ontology-driven enrichment ensures that the extracted content is not just structured, but also semantically interoperable, facilitating lifecycle data reuse and traceability across systems and projects.
 
 ---
 ## 🖼️ Implementation Figures
