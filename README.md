@@ -45,12 +45,12 @@ Maps enriched XML content to an RDF graph aligned with ISO 15926 using `rdflib`.
 
 ### 🧱 Layout Extraction Logic
 
-![Layout Modules](gad-extractor/LayoutExtraction.drawio (7).png)
+![Layout Modules](gad-extractor/LayoutExtraction.png)
 
 
 ### ⛓️ Semantic Structuring Overview
 
-![Pipeline Overview](gad-extractor/SemanticEnrichment.drawio (4).png)
+![Pipeline Overview](gad-extractor/SemanticEnrichment.png)
 
 ---
 
